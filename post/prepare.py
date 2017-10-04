@@ -18,7 +18,8 @@ def looted_user():
                 field = line[idx1+1:idx2-1]
             else:
 '''
-os.system("cat /root/.msf4/loot/ssh_login.txt | \
+if os.path.exists('/root/.msf4/loot/ssh_login.txt'):
+		os.system("cat /root/.msf4/loot/ssh_login.txt | \
                 awk '{ print $3 }' | \
                 grep / | \
                 awk '{print substr($0,7)}' | \
